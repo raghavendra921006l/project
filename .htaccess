@@ -1,0 +1,18 @@
+RewriteEngine On
+RewriteRule ^$ index.php
+RewriteRule ^admin_panel/([a-zA-Z0-9_-]+)$ routes.php?page=$1 [L]
+RewriteRule ^sub/([0-9]+)/que/([0-9]+)?$ _view/questions.php?s_id=$1&q_id=$2 [L]
+RewriteRule ^sub/([0-9]+)?$ _view/subjects.php?id=$1 [L]
+RewriteRule ^([a-zA-Z0-9_-]+)$ index.php?page=$1 [L]
+
+ErrorDocument 404 /sa/error
+ErrorDocument 400 /sa/error
+ErrorDocument 401 /sa/error
+ErrorDocument 403 /sa/error
+ErrorDocument 404 /sa/error
+ErrorDocument 405 /sa/error
+ErrorDocument 408 /sa/error
+ErrorDocument 414 /sa/error
+ErrorDocument 500 /sa/error
+ErrorDocument 502 /sa/error
+ErrorDocument 504 /sa/error
